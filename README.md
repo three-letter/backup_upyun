@@ -19,13 +19,13 @@ Or install it yourself as:
 ## Usage
 
     require "backup_upyun"
+    
     Model.new(:my_test, 'Description for my_test') do
     
         archive :my_archive do |archive|
-        # Run the `tar` command using `sudo`
-        # archive.use_sudo
             archive.add "/Users/iosdev01/work/project/whosv-gem/backupyun/pkg/backupyun-0.0.2.gem"
         end
+        
         store_with "Upyun" do |upyun|
             upyun.bucket   = "upyun_bucket"
             upyun.username = "upyun_username"
